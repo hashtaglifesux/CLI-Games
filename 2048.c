@@ -179,9 +179,13 @@ int main(int argc, char *argv[]) {
       return 0;
     }
     
-    system("clear");
-    drawBoard(&board[0][0]);
-    printf("input direction (u, d, l, r): ");
-    playerInput(board, getchar());
+    char inputchar;
+    do {
+      system("clear");
+      drawBoard(&board[0][0]);
+      printf("input direction (u, d, l, r): ");
+      inputchar = getchar();
+    } while (inputchar == '\n');
+    playerInput(board, inputchar);
   }
 }
